@@ -17,19 +17,13 @@ Replace this paragraph with your own summary of what your version does.
 
 ## How The System Works
 
-Explain your design in plain language.
+In my recommendation design, a `Song` acts as a data container that uses continuous audio traits—like energy, valence, danceability, acousticness, and scaled tempo—for mathematical matching, alongside descriptive metadata tags like genre and mood for basic sorting. 
 
-Some prompts to answer:
+To figure out what a listener wants, the system relies on a `UserProfile` that stores their current ideal listening state, which includes specific numerical values the user is currently in the mood for (like a target energy level of 0.8). It also stores any active category filters they have turned on, such as restricting the search to only "lofi" tracks.
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+When it is time to compute a score for each track, the recommender calculates the mathematical distance between the user's ideal target numbers and the song's actual numbers across all those features, ultimately converting that gap into an intuitive percentage where a closer distance equals a higher match score. 
 
-You can include a simple diagram or bullet list if helpful.
-
----
+Finally, to choose which songs to actually present, the system first eliminates any tracks that violate the user's active filters, sorts the remaining candidates from the highest match score to the lowest, and applies a final ranking logic to ensure the top results offer a diverse mix of artists for an enjoyable playlist.
 
 ## Getting Started
 
