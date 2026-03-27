@@ -39,6 +39,10 @@ For each song, calculate a total score starting at 0:
 * By heavily weighting the text tag (+2.0 for genre), the system will likely bury songs with a perfect mathematical audio vibe simply because they belong to a different category.
 * Since the scoring is strictly content-based, it risks recommending a monotonous block of identical-sounding tracks by the same artist, ignoring the user's need for novelty or variety.
 
+### CLI Verification
+
+![Alt text for the image](terminal-output-screenshot.png)
+
 ## Getting Started
 
 ### Setup
